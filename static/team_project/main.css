@@ -1,0 +1,16 @@
+.carousel-inner > .carousel-item > img{
+    width: 400px;
+    height: 500px;
+}
+.carousel{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    width : 1000px;
+    height: 550px;
+}
+body {
+    background-color:#E6E6E6;
+}
+.carousel-item{
+    border:5px solid white;
+}

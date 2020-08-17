@@ -1,0 +1,73 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/introduce.css' %}">
+<style>
+    .all{
+        width:100%;
+        height:100%;
+    }
+    .left{
+        width:50%;
+        float:left;
+        padding:5%;
+    }
+    .right{
+        width:50%;
+        float:left;
+        padding:5%;
+    }
+</style>
+
+<div class="all">
+    <div class="left">
+        <div id="introduce_container_one">
+           <h2>프리미어 리그</h2>
+           <div class="card bg-light">
+               <img class="card-img-top" src="/static/team_project/1.jpg" alt="Card image" >
+               <div class="card-body">
+                   <h4 class="card-title">프리미어 리그란?</h4>
+                   <p class="card-text">1992년부터 시작한 잉글랜드의 최상위 축구 리그를 지칭한다.
+                       전 세계 축구 리그 중 가장 많은 수익을 올리는 리그이며, 전 세계 스포츠 리그의 4위를 차지한다.
+                       한 시즌 당 20개의 팀이 참전하여 총 38경기가 치뤄지며, 성적이 저조한 팀은 강등당해 다른 새 팀들과 교체된다.
+                   </p>
+                   <a href="https://www.premierleague.com/" class="btn btn-primaty" style="background-color:gray;" target="_blank">공식 사이트</a>
+                   <br><br>
+                   <h4 class="card-title">과제 수행 계기</h4>
+                   <p class="card-text">프리미어 리그는 홈페이지를 통해 특정 모든 경기에 있어서 양 팀의 점유율, 유효슛, 패스, 코너킥, 반칙 등
+                        다양한 스텟을 제공한다. 해당 정보를 통해 각 팀별로 스텟의 수치를 확인할 수 있지만 과연 어느 정도의 수치가
+                        되어야 해당 팀이 좋은 플레이를 했다고 평가할 수 있을지 의문이 생겼고, 각 스텟이 어느 수준이 되어야 승리를 취함에 있어
+                        유의한지 궁금증이 생겨 해당 프로젝트를 진행하게 되었다.
+                   </p>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="introduce_container_two" >
+            <h2>분석목적과 기대효과</h2>
+            <div class="card bg-light " >
+               <img class="card-img-top" src="/static/team_project/image/introduce2.PNG" alt="Card image">
+               <div class="card-body">
+                   <h4 class="card-title">수행 목표</h4>
+                   <p class="card-text">
+                       1. 프리미어 리그 경기의 각 스텟이 승률에 미치는 영향을 확인할 수 있다.<br>
+                       2. 높은 승률을 얻기 위한 각 스텟의 수치를 확인할 수 있다.<br>
+                       3. 프리미어 경기의 스텟이 서로에게 미치는 영향을 확인할 수 있다.<br>
+                       4. 상위 네 팀별 스텟이 서로에게 미치는 영향을 확인하고 이를 비교할 수 있다.
+                   </p>
+                   <a href="" class="btn btn-primaty" target="_blank" style="cursor: default; pointer-events: none;">　</a>
+                   <br><br><br>
+                   <h4 class="card-title">기대 효과</h4>
+                   <p class="card-text">
+                       1. 승률을 높이기 위한 수치가 부족한 스텟을 전략적으로 강화할 수 있다.<br>
+                       2. 승률에 더 높은 관계가 있는 스텟을 집중적으로 관리할 수 있다.<br>
+                       3. 각 스텟끼리의 관계를 확인하고 이를 조율할 수 있다.<br>
+                       4. 각 팀별 스텟끼리의 상관 차이를 확인하고, 집중분석을 할 수 있다.
+                   </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

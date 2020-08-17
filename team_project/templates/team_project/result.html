@@ -1,0 +1,57 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/blink.css' %}">
+<style>
+    .all{
+        padding: 8%;
+    }
+</style>
+<div class="all">
+    <div id="card">
+       <h2>결과</h2>
+       <div class="card bg-light">
+           <img class="card-img-top" src="/static/team_project/image/result.png" alt="Card image" >
+           <div class="card-body">
+               <h4 class="card-title">스텟의 수치와 승률의 상관</h4>
+               <p class="card-text">
+                   승률과 높은 상관을 지니는 스텟의 순위와 승률이 50%가 넘기 위한 수치는 다음과 같다.<br>
+                   <hr>
+                   1. 레드카드(0) | 2. 유효슈팅(6) | 3. 슈팅(16) | 4. 터치(800) | 5. 점유율(68) | 6. 패스(600) |
+                   7. 옐로카드(0) | 8. 클리어링(54) | 9. 코너킥(17) | 10. 파울(3)<br>
+                   <hr>
+                   따라서 순위가 높은 스텟이 승률 50% 이상을 만족하는 최소 수치를 이룰수록 승리할 확률이 높다고 할 수 있다.
+               </p>
+               <br><br>
+               <h4 class="card-title">각 스텟의 상관관계</h4>
+               <p class="card-text">
+                    어느 팀에서나 스텟 간 아주 높은 상관을 보여주는 스텟은 다음과 같다.
+                    <hr>
+                    점유율 - 패스 | 점유율 - 터치 | 패스 - 터치
+                    <hr><br>
+                    어느 팀에서나 스텟 간 유의미한 상관을 보여주는 스텟은 다움과 같다.
+                    <hr>
+                    점유율 - 슛 | 점유율 - 클리어링 | 슛 - 유효슛 | 슛 - 코너킥 | 터치 - 클리어링 | 패스 - 클리어링 | 옐로카드 - 파울
+                    <hr><br>
+                    그 외 다른 스텟 간 상관은 팀별로 차이가 있는 것으로 나타났다. 따라서 특정 팀의 스텟 상관을 자세히 알아보기 위해서는
+                    해당 팀의 경기를 따로 분석해야할 필요가 있다.
+               </p>
+               <br><br>
+               <h4 class="card-title">한계 및 후속연구</h4>
+               <p class="card-text">
+                   축구 경기의 승패는 단순히 한 스텟의 수치에 의해 결정되지 않고 다양한 스텟으로 인해 결정되기 떄문에
+                   때문에 한 스텟의 수치를 가지고 정확한 승률을 예측하기 어려움
+                   <br><br>
+                   여성 축구 경기와의 비교를 통해 성별 간 스텟가 승률의 관계, 스텟의 상관을 비교해볼 수 있음
+                   <br><br>
+                   마찬가지로 k리그 등 다양한 다른 리그와의 비교를 통해 경기 특징이나 사용되는 전략의 차이를 비교해볼 수 있음
+
+               </p>
+
+
+               </p>
+           </div>
+       </div>
+    </div>
+</div>
+{% endblock %}

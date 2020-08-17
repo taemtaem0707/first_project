@@ -1,0 +1,181 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'portfolio/fadein.css' %}">
+
+<style>
+    .all {
+         height:100%;
+         width:100%
+    }
+    .left{
+        float:left;
+        margin-left:10%;
+        width:30%;
+        height:100%;
+    }
+    .right{
+        float:right;
+        margin-right:10%;
+        width:50%;
+        height:100%;
+    }
+    .photo-card{
+        float:left;
+        margin-top: 150px;
+        margin-bottom: 20px;
+        width: 70%;
+        height:50%;
+
+    }
+    .card-img-top{
+        border-radius:5px;
+        display: block;
+        margin: 0px auto;
+        height:380px;
+        width: 100%;
+    }
+    .card-body{
+        width: 100%;
+        background-color:white;
+        height: 190px;
+    }
+    .text-area{
+        float:right;
+        margin-top:150px;
+        margin-right:0%;
+        width: 100%;
+        background-color:white;
+        border-radius: 4px;
+
+    }
+    .one, .two, .three{
+        margin-left:3%;
+    }
+    .academy{
+        float:left;
+        height:20%;
+        width: 25%;
+        font-size:11px;
+        margin-bottom:3%;
+    }
+</style>
+<div class="all">
+    <div class="left">
+        <div class="photo-card">
+            <div class="card bg-light">
+               <img class="card-img-top" src="/static/portfolio/photo2.jpg" alt="Card image" >
+               <div class="card-body">
+                   <h4 class="card-title">권 태 민</h4>
+                   <h6>Kwon Tae Min</h6>
+                   <p class="card-text">
+                       Birth : 1995. 07. 07 (만 25세)<br>
+                       Phone : 010-8971-7866<br>
+                       E-mail : taemtaem0707@gmail.com<br>
+                       University : 단국대학교 심리학과
+                   </p>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="text-area">
+            <div class="one" style="margin-top:2%;">
+                <h4>Motto</h4>
+                <p>할 수 없어서 못하는 것이 아니라 하려는 의지가 없어서 못하는 것이다.</p>
+            </div>
+            <hr>
+            <div class="two">
+                <h4>Technic</h4>
+                <table>
+                    <tr>
+                        <th style="width:100px;">
+                            main
+                        </th>
+                        <th>
+                            sub
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Python
+                        </td>
+                        <td>
+                            FLASK | JAVA | BOOTSTRAP | HTML | CSS | JAVASCRIPT | JQUERY
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             Django
+                        </td>
+                        <td>
+                            MYSQL | MSSQL | R | PANDAS
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="three" style="margin-top:2%;">
+                <h4>Academy curriculum :: 더조은</h4>
+                <div class="academy">
+                    애플리케이션 요구사항 분석<br>
+                    애플리케이션 설계<br>
+                    인터페이스 설계<br>
+                    요구사항 확인<br>
+                    서버프로그램 구현<br>
+                    인터페이스 구현<br>
+                    정보시스템 이행<br>
+                    통합 구현<br>
+                    화면 구현<br>
+                    화면 설계<br>
+                    애플리케이션 테스트 수행<br>
+                    애플리케이션 테스트 관리<br>
+                    애플리케이션 배포<br>
+                    프로그래밍 언어 활용
+                </div>
+                <div class="academy">
+                    데이터베이스 구현<br>
+                    데이터베이스 요구사항 분석<br>
+                    데이터베이스 요구사항 분석표<br>
+                    SQL 응용<br>
+                </div>
+                <div class="academy">
+                    빅데이터 플랫폼 요구사항 분석<br>
+                    빅데이터 플랫폼 아키텍처 설계<br>
+                    빅데이터 수집, 저장 시스템 개발<br>
+                    빅데이터 처리, 분석 시스템 개발<br>
+                    빅데이터 품질관리 시스템 개발<br>
+                    빅데이터 플랫폼 테스트<br>
+                    빅데이터 통계학<br>
+                    통계기반 데이터 분석<br>
+                    탐색적 데이터 분석<br>
+                    텍스트 데이터 분석<br>
+                    머신러닝기반 데이터 분석<br>
+                    빅데이터 분석 결과 시각화<br>
+                    분석용 데이터 구축<br>
+                    딥러닝(AI)
+                </div>
+                <div class="academy">
+                    JAVA<br>
+                    JSP<br>
+                    PYTHON<br>
+                    FLASK<br>
+                    HTML<br>
+                    CSS<br>
+                    JAVASCRIPT<br>
+                    JQUERY<br>
+                    MSSQL<br>
+                    MYSQL<br>
+                    HADOOP<br>
+                    NUMPY<br>
+                    PANDAS<br>
+                    R<br>
+                    MACHINE-LEARNING<br>
+                    DEEP-LEARNING<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

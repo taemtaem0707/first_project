@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오</title>
+    <!--  https://getbootstrap.com/docs/4.1/getting-started/introduction/  -->
+    <!-- 부트스트랩 css  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--  static의 css  -->
+    <link rel="stylesheet" href="{% static 'portfolio/base.css' %}">
+    <!-- js  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="/portfolio/main/">
+            <img src="/static/portfolio/logo.png" alt="logo" style="width:40px;"/>
+        </a>
+        <button class="navbar-toggler" type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    {% if request.path == '/portfolio/info/' %}
+                        <a class="nav-link " href="/portfolio/info" style="color:#F5A9A9;">ABOUT ME</a>
+                    {% else %}
+                        <a class="nav-link" href="/portfolio/info">ABOUT ME</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if request.path == '/portfolio/portfolio/' %}
+                        <a class="nav-link selected" href="/portfolio/portfolio" style="color:#F5A9A9;">PORTFOLIO</a>
+                    {% else %}
+                        <a class="nav-link" href="/portfolio/portfolio">PORTFOLIO</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if request.path == '/portfolio/team_project/' %}
+                        <a class="nav-link selected" href="/portfolio/team_project" style="color:#F5A9A9;">TEAM PROJECT</a>
+                    {% else %}
+                        <a class="nav-link" href="/portfolio/team_project">TEAM PROJECT</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                {% if request.path == '/portfolio/certificates/' %}
+                        <a class="nav-link selected" href="/portfolio/certificates" style="color:#F5A9A9;">CERTIFICATES</a>
+                    {% else %}
+                        <a class="nav-link" href="/portfolio/certificates">CERTIFICATES</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                {% if request.path == '/portfolio/blog/' %}
+                        <a class="nav-link selected" href="/portfolio/blog" style="color:#F5A9A9;">T-STORY(BLOG)</a>
+                    {% else %}
+                        <a class="nav-link" href="/portfolio/blog">T-STORY(BLOG)</a>
+                    {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+{% block content%}
+{% endblock %}
+
+</body>
+
+
+
+</html>

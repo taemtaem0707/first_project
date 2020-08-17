@@ -1,0 +1,310 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+
+
+<style>
+    .all{
+        width:100%;
+        height:100%;
+    }
+    .top{
+        width:100%;
+    }
+    .nowrank{
+        margin-top:20px;
+        width:100%;
+        text-align:center;
+        font-size:15px;
+        border: 1px solid black;
+    }
+    .line1{
+        border-bottom: 1px solid black;
+        background-color: white;
+    }
+    .line2{
+        border-right: 1px solid black;
+        background-color: yellow;
+    }
+    .left{
+        width:45%;
+        height:500px;
+        float:left;
+
+    }
+    .right{
+        width:55%;
+        height:500px;
+        float:right;
+    }
+    .search{
+        padding:5%;
+
+    }
+    #select_button{
+        margin-top: 5px;
+        margin-left:137px;
+    }
+    .input{
+        background-color:#E6E6E6;
+        border: 0px;
+        color:red;
+    }
+    .search_list{
+        padding:5%;
+
+    }
+    #search_table{
+        font-size:13px;
+    }
+    .search_ranking{
+        padding:5%;
+        height:450px;
+        width:100%;
+    }
+    #myteam{
+        float:left;
+        text-align:right;
+        width:55%;
+        font-size:13px;
+    }
+
+    #otherteam{
+        float:left;
+        text-align:left;
+        width:45%;
+        font-size:13px;
+    }
+
+    .info{
+    margin-top:8px;
+        padding:3%
+
+    }
+    .textarea{
+        padding:7px;
+        background-color:white;
+    }
+    .result{
+        background-color:gray;
+        padding:3%;
+    }
+    .draw{
+        width:45%;
+        height:300px;
+        margin: 2%;
+        margin-bottom:4%;
+    }
+    h4{
+        background-color:gray;
+    }
+
+
+
+
+    .blink{
+         animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        -webkit-animation: fadein 2s;
+        -o-animation: fadein 2s;
+    }
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-moz-keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+
+</style>
+
+
+<div class="all" style="">
+    <div class="top">
+            <table class="nowrank">
+                <tr class="line1">
+                    <th>NO</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+
+                </tr>
+                <tr class="line2">
+                    <th>팀명</th>
+                    {% for rank in crawling_data %}
+                    <td>{{ rank }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+    </div>
+    <div class="left">
+        <div class="search">
+            <h4>자신의 팀과 상대 팀을 골라주세요.</h4>
+            <form action="{% url 'function' %}" method="post">{% csrf_token %}
+                {{ form }}
+                <div id="select_button">
+                    {% if form.team1.value == form.team2.value %}
+                        <input class="input" type="text" disabled value="서로 다른 팀을 고르세요."></input>
+                    {% else %}
+                        <input class="input" type="text" disabled></input>
+                    {% endif %}
+                    <input class="btn btn-secondary" type="submit" value="확인">
+                    <a class="btn btn-secondary" href="/team_project/function" role="button">리셋</a>
+                    <a class="btn btn-secondary" href="/static/team_project/html/function.html" target="_blank">작동원리</a>
+                </div>
+            </form>
+
+        </div>
+        <div class="search_list">
+            <h4> 유저 검색기록 [최근 10회]</h4>
+            <table id="search_table" class="table table-hover" style="background-color:white; text-align:center;">
+                <thead class="thead-light">
+                    <tr>
+                        <th>번호</th>
+                        <th>선택팀</th>
+                        <th>VS</th>
+                        <th>상대팀</th>
+                        <th>검색일</th>
+                    </tr>
+                </thead>
+                {% for item in check %}
+                <tr class="active" >
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.team1 }}</td>
+                        <td>VS</td>
+                        <td>{{ item.team2 }}</td>
+                        <td>{{ item.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="search_ranking">
+            <h4>개별 검색랭킹</h4>
+            <div>
+                <table id="myteam" class="table table-hover" style="background-color:white;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>검색 수</th>
+                            <th style="text-align:right;">선택팀</th>
+                            <th style="text-align:center;">순위</th>
+                        </tr>
+                     </thead>
+                    {% for item in my_team %}
+                    <tr class="active">
+                        <td style="text-align:center;">{{ item.count }}</td>
+                        <td style="text-align:right;">{{ item.team1 }}</td>
+                        <td style="text-align:center;">{{ forloop.counter }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div>
+                <table id="otherteam" class="table table-hover" style="background-color:white;">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>상대팀</th>
+                        <th>검색 수</th>
+                    </tr>
+                     </thead>
+                    {% for item in other_team %}
+                    <tr class="active">
+                        <td>{{ item.team2 }}</td>
+                        <td style="text-align:center;">{{ item.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <div class="info">
+            <h4>사용법</h4>
+            <div class="textarea">
+                1. 상단에 오늘({{ now_time }})을 기준으로 프리미어 리그 순위가 나타납니다. (비시즌의 경우 이름 순서)<br>
+                2. 비교하고 싶은 자신의 팀과 상대팀을 고른 후 확인을 눌러주세요.<br>
+                3. 좌측에서 사용자들이 검색한 기록과 자신의 팀으로, 혹은 상대팀으로 뽑힌 개별 랭킹을 참고할 수 있습니다.<br>
+                4. 최근 5년간 있었던 모든 프리미어 리그 경기의 시즌별로 각 팀의 평균 스텟이 검색결과에 나타납니다.<br>
+                5. 홈페이지에서 앞서 언급된 내용을 참고해 스탯을 유의깊게 확인해보세요.<br>
+                6. 특정 시즌의 수치가 0이라면, 이는 해당 시즌에 선발된 팀이 아니라는 뜻 입니다.
+            </div>
+
+
+        </div>
+        <div class="result">
+            <h4>검색결과</h4>
+            {% if form.team1.value == None %}
+            {% else %}
+            <img class="draw" src="{% static 'team_project/function/possession.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Shots.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Shots_on_Target.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Touches.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Passes.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Tackles.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Clearances.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Corners.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Offsides.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Yellow_cards.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Red_cards.png' %}">
+            <img class="draw" src="{% static 'team_project/function/Fouls_conceded.png' %}">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

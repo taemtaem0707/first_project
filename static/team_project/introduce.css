@@ -1,0 +1,42 @@
+.card-img-top{
+    height: 200px;
+}
+
+#introduce_container_one, #introduce_container_two{
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+    -o-animation: fadein 2s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

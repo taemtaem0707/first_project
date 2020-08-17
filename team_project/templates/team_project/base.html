@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>팀프로젝트</title>
+    <link rel="stylesheet" href="//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css">
+    <script src='//unpkg.com/jquery@3/dist/jquery.min.js'></script>
+    <script src='//unpkg.com/popper.js@1/dist/umd/popper.min.js'></script>
+    <script src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="{% static 'team_project/base.css' %}">
+</head>
+<body>
+<div style="background-color:#494947">
+    <center>
+        <a href="/team_project/main">
+            <img class="banner" src="/static/team_project/banner2.png" style=" width:700px; margin-top:-30px; margin-bottom:-30px;"></img>
+        </a>
+    </center>
+</div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
+        <a class="navbar-brand" href="/team_project/main/">
+            <img src="/static/team_project/image/logo1.png" alt="logo" style="width:170px;"/>
+        </a>
+        <button class="navbar-toggler" type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav " >
+                <li class="nav-item">
+                    {% if request.path == '/team_project/introduce/' %}
+                        <a class="nav-link " href="/team_project/introduce" style="color:#F5A9A9;">INTRODUCE</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/introduce">INTRODUCE</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if request.path == '/team_project/crawling/' %}
+                        <a class="nav-link selected" href="/team_project/crawling" style="color:#F5A9A9;">CRAWLING</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/crawling">CRAWLING</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% if request.path == '/team_project/processing/' %}
+                        <a class="nav-link selected" href="/team_project/processing" style="color:#F5A9A9;">PROCESSING</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/processing">PROCESSING</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                    {% if request.path == '/team_project/visual/' %}
+                        <a class="nav-link selected" href="/team_project/visual" style="color:#F5A9A9;">ANALYSIS & VISUALIZATION</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/visual">ANALYSIS & VISUALIZATION</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                    {% if request.path == '/team_project/result/' %}
+                        <a class="nav-link selected" href="/team_project/result" style="color:#F5A9A9;">RESULT</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/result">RESULT</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                    {% if request.path == '/team_project/extension/' %}
+                        <a class="nav-link selected" href="/team_project/extension" style="color:#F5A9A9;">EXTENSION</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/extension">EXTENSION</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <li class="nav-item">
+                    {% if request.path == '/team_project/function/' %}
+                        <a class="nav-link selected" href="/team_project/function" style="color:#F5A9A9;">FUNCTION</a>
+                    {% else %}
+                        <a class="nav-link" href="/team_project/function">FUNCTION</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        CREATER
+                    </a>
+                    <div id="drop" class="dropdown-menu">
+                        <a class="dropdown-item" href="#">서주광</a>
+                        <a class="dropdown-item" href="#">권태민</a>
+                        <a class="dropdown-item" href="#">김연수</a>
+                        <a class="dropdown-item" href="#">김상현</a>
+                        <a class="dropdown-item" href="#">여소망</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% block content%}
+{% endblock %}
+</body>
+<footer>
+    <div class="footer">
+        <div id="button"></div>
+        <div id="container">
+            <div id="cont">
+                <div class="footer_center">
+                    <h6>더조은컴퓨터학원 | 서울 구로구 디지털로 306 대륭포스트타워 2차 <br><br>팀프로젝트 | 프리미어 리그 분석 <br>서주광 | 권태민 | 김연수 | 김상현 | 여소망</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

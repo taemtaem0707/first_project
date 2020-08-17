@@ -1,0 +1,44 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/blink.css' %}">
+<div class="all">
+    <div class="left">
+        <div id="introduce_container_one">
+           <h2>데이터 처리</h2>
+           <div class="card bg-light ">
+               <div class="card-body">
+                   <h4 class="card-title">처리 과정</h4>
+                   <p class="card-text">
+                       최근 경기 스텟수치와 승리와의 관계를 알아보고, 각 스텟간의 상관분석과 회귀분석을 진행하기 위해 데이터를 처리했다.
+                       그리고 각 스텟간의 상관이 팀별로 전략이나 선수 특성 등에 따른 차이가 존재하는지 확인하고자 상위 네 팀의 경기를
+                       따로 처리했다.
+                   </p>
+                   <br><br>
+                   <h4 class="card-title">최근 다섯 시즌 전체 경기</h4>
+                   <p class="card-text">
+                       1. 최근 다섯 시즌(2015/16~19/20) 경기 데이터만 추출<br>
+                       2. 옐로카드, 오프사이드 등 Na로 표기된 값 0으로 처리
+                   </p>
+                   <a href="/static/team_project/html/premier_league_allteam.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">전체경기 상세화면</a>
+                    <br><br>
+                   <h4 class="card-title">최근 다섯 시즌 상위 네 팀 경기</h4>
+                   <p class="card-text">
+                       1. 위의 최근 5년 전체 경기와 동일한 과정을 수행<br>
+                       2. 상위 네 팀(리버풀, 첼시, 토트넘, 맨시티)의 경기 각각 추출
+                   </p>
+                   <a href="/static/team_project/html/premier_league_4team.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">상위 네 팀 상세화면</a>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="introduce_container_two">
+            <h2>　</h2>
+            <div class="card bg-light ">
+               <img class="card-img" src="/static/team_project/image/processing.jpg" alt="Card image">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="17; url={% url 'main' %}">
+    <title>Loading</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'portfolio/loading.css' %}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var text = document.getElementById("textType");
+            var typewriter = new Typewriter(text, {
+                loop: false
+            });
+            typewriter.typeString('Hello World!')
+                .pauseFor(300)
+                .deleteAll()
+                .typeString('KwonTaeMin')
+                .pauseFor(200)
+                .deleteChars(6)
+                .pauseFor(300)
+                .typeString("'s Portfolio")
+                .pauseFor(300)
+                .deleteAll()
+                .typeString('<strong>MOVE NOW</strong>')
+                .start();
+            });
+    </script>
+
+</head>
+<body>
+    <img src="{% static 'portfolio/loading.gif' %}" alt="loading_gif"/>
+    <div id="textType"></div>
+</body>
+</html>
+

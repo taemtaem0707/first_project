@@ -1,0 +1,94 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'portfolio/fadein.css' %}">
+
+<style>
+    .all{
+        width: 100%;
+        height: 100%;
+    }
+    .one, .two, .three{
+        float:left;
+        margin-top:150px;
+        margin-left:4.7%;
+        width:27%;
+        height:500px;
+        background-color:#F3F781;
+        border-radius:4px;
+    }
+    .four, .five, .six{
+        float:left;
+        margin-top:120px;
+        margin-left:4.7%;
+        width:27%;
+        height:500px;
+        background-color:#F3F781;
+        border-radius:4px;
+
+    }
+    .seven, .eight, .nine{
+        float:left;
+        margin-top:120px;
+        margin-left:4.7%;
+        width:27%;
+        height:500px;
+        background-color:#F3F781;
+        border-radius:4px;
+        margin-bottom:80px;
+    }
+    span{
+        text-align: center;
+        font-size: 20px;
+        margin-left:5%;
+        color:black;
+    }
+
+
+</style>
+
+<div class="all">
+    <div>
+        <div class="one">
+            <span>GTQ 1급</span>
+            <img src="/static/portfolio/2.PNG" style="height: 100%; width:100%">
+        </div>
+        <div class="two">
+            <span>ITQ OA MASTER</span>
+            <img src="/static/portfolio/3.PNG" style="height: 100%; width:100%">
+        </div>
+        <div class="three">
+            <span>정보처리기사 필기</span>1
+            <img src="/static/portfolio/1.PNG" style="height: 100%; width:100%">
+        </div>
+    </div>
+    <div>
+        <div class="four">
+            <span>인프런 - 파이썬으로 장고 공략하기</span>
+            <img src="/static/portfolio/4.PNG" style="height: 100%; width:100%">
+        </div>
+        <div class="five">
+            <span>Tacademy - 컴퓨터 알고리즘 초급</span>
+            <img src="/static/portfolio/5.PNG" style="height: 100%; width:100%">
+        </div>
+        <div class="six">
+            <span>Tacademy - 데이터베이스</span>
+            <img src="/static/portfolio/6.PNG" style="height: 100%; width:100%">
+        </div>
+    </div>
+        <div>
+        <div class="seven">
+            <span>Tacademy - Python 프로그래밍</span>
+            <img src="/static/portfolio/7.PNG" style="height: 100%; width:100%">
+        </div>
+<!--        <div class="eight">-->
+<!--            <span>-</span>-->
+<!--            <img style="height: 100%; width:100%">-->
+<!--        </div>-->
+<!--        <div class="nine">-->
+<!--            <span>-</span>-->
+<!--            <img src="/static/portfolio/6.PNG" style="height: 100%; width:100%">-->
+<!--        </div>-->
+    </div>
+</div>
+{% endblock %}

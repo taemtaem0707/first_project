@@ -1,0 +1,44 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/blink.css' %}">
+
+
+<div class="all">
+    <div class="left">
+        <div id="introduce_container_one">
+           <h2>데이터 수집</h2>
+           <div class="card bg-light ">
+               <div class="card-body">
+                   <h4 class="card-title">수집 홈페이지</h4>
+                   <p class="card-text">
+                       프리미어리그 공식 홈페이지는 지금까지 있었던 모든 경기 데이터를 보유중이며, 각 경기별 날짜와 승리결과,
+                       해당 경기에서의 각 팀별 스텟을 제공한다. 제공되는 스탯은 다음과 같다.<br><br>
+                       <b>점유율, 유효슛, 슛, 터치, 패스, 태클, 걷어내기, 코너킥, 오프사이드, 옐로카드, 레드카드, 파울</b><br><br>
+                       프리미어 리그 최초의 경기부터 가장 최근까지의 경기 정보를 얻기 위해 해당 사이트에서 데이터를 수집했다.
+                   </p>
+                   <a href="https://www.premierleague.com/match/46975" class="btn btn-primaty" style="background-color:gray;" target="_blank">수집 사이트</a>
+                  <br><br>
+                   <h4 class="card-title">수집과정</h4>
+                   <p class="card-text">
+                       1. jupyter notebook과 python을 사용<br>
+                       2. 스텟은 동적페이지에 담겨있기 때문에 단순 수집 불가능<br>
+                       3. chrome developer tools를 이용해 해결 - network header<br>
+                       4. 위 사이트 .../match/00001 부터 .../50000까지 데이터 수집<br>
+                       5. premier league 이외의 경기는 제외처리<br>
+                   </p>
+                   <a href="/static/team_project/html/premier_league_crawling.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">수집과정 상세화면</a>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="introduce_container_two">
+            <h2>　</h2>
+            <div class="card bg-light ">
+               <img class="card-img" src="/static/team_project/image/crawling1.jpg" alt="Card image">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

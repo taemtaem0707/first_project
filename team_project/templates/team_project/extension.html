@@ -1,0 +1,49 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/blink.css' %}">
+<div class="all">
+    <div class="left">
+        <div id="introduce_container_one">
+           <h2>분석 확장</h2>
+           <div class="card bg-light ">
+               <div class="card-body">
+                   <h4 class="card-title">추가분석</h4>
+                   <p class="card-text">
+                       앞서 구한 최근 프리미어 리그에 있어서 각 스텟별 승리와의 상관관계가 과거 경기들에도 동일한지 의문이 발생.
+                       이를 직접 확인해보기 위해 과거 경기 데이터를 수집하고, 이를 기존에 데이터를 조작한 방법으로 확인한 뒤 비교
+                   </p>
+                   <br>
+                   <h4 class="card-title">2006/07시즌 ~ 2009/10시즌</h4>
+                   <p class="card-text">
+                       1. 2006/07~09/10 경기 데이터 추출<br>
+                       2. 2010/11~14/15 경기 데이터 추출<br>
+                       3. 데이터 전처리 후 각 스텟 수치와 승리의 상관관계 확인<br>
+                       4. 앞서 구한 최근 시즌과 함께 비교
+                   </p>
+                   <a href="/static/team_project/html/premier_league_previous.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">상세화면</a>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="introduce_container_two" style="margin-top:45px;">
+           <div class="card bg-light ">
+               <div class="card-body">
+                   <h4 class="card-title">정리</h4>
+                   <p class="card-text">
+                    옐로카드의 경우 상관수치와 중요 순위가 지속적으로 낮아지는 모습을 보이지만 여전히 0.8이상의 높은 상관을 보이고 있다.<br>
+                    클리어링과 코너킥의 경우 2010/11~2014/15시즌에 상당히 높은 상관을 보였지만 최근 시즌에서는 감소한 특징을 보인다.<br>
+                    파울의 경우 과거 매우 높은 상관을 보였지만 그 이후로 감소하는 추세를 보이고 있다.<br>
+                    오프사이드는 과거에는 매우 높은 상관을 보였지만 최근에 이르러서는 아예 상관이 없을을 보여준다.<br>
+                    <hr>
+                    이처럼 대부분의 스텟이 모든 시즌에 있어서 비슷한 상관을 보이고 있지만 그 순위가 조금씩 변하고 있다.
+                    또한 상관수치가 감소, 증가하거나 오프사이드와 같이 아예 상관이 없어지는 등 시간이 지남에 따라 변하는 모습을 보여준다.<br>
+                    이는 다양한 축구 전략과 연구로 인해 <strong>승리에 영향을 미치는 스텟의 중요도가 지속적으로 변하고 있음</strong>을 시사하며, 축구라는 하나의 스포츠 <strong>전체가 아닌 일정 기간을 정해 분석하는 것이 더 정확하고 깊은 정보</strong>를 얻을 수 있음을 의미한다.
+                   </p>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

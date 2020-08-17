@@ -1,0 +1,48 @@
+{% extends 'team_project/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'team_project/blink.css' %}">
+
+
+<div class="all">
+    <div class="left">
+        <div id="introduce_container_one">
+           <h2>분석과 시각화</h2>
+           <div class="card bg-light ">
+               <div class="card-body">
+                   <h4 class="card-title">스텟 수치에 따른 승리확률</h4>
+                   <p class="card-text">
+                       1. 데이터 처리에서 얻은 최근 다섯 시즌 전체 경기 데이터 사용<br>
+                       2. 각 스텟의 수치에 따른 승리 확률을 분석, 시각화
+                   </p>
+                   <a href="/static/team_project/html/stats_and_winningrate.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">상세화면</a>
+                   <br><br>
+                   <h4 class="card-title">스텟 간의 상관분석, 선형회귀</h4>
+                   <p class="card-text">
+                       1. 최근 다섯 시즌 전체 경기 데이터 사용<br>
+                       2. 12개의 각 스텟간의 상관관계를 확인<br>
+                       3. 0.3 이상의 유의미한 상관을 지닌 스텟끼리의 회귀분석을 확인
+                   </p>
+                   <a href="/static/team_project/html/premier_league_allteam_correlation.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">상세화면</a>
+                   <br><br>
+                   <h4 class="card-title">상위 네 팀의 개별 스텟 간 상관분석</h4>
+                   <p class="card-text">
+                       1. 최근 다섯 시즌 상위 네 팀의 경기 데이터를 사용<br>
+                       2. 각 팀별로 12개의 스텟간의 상관관계를 확인<br>
+                       3. 전체 경기에서 얻은 자료와 각 팀 별 자료를 비교
+                   </p>
+                   <a href="/static/team_project/html/premier_league_4team_correlation.html" class="btn btn-primaty" style="background-color:gray;" target="_blank">상세화면</a>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div class="right">
+        <div id="introduce_container_two">
+            <h2>　</h2>
+            <div class="card bg-light ">
+               <img class="card-img" src="/static/team_project/image/visualization.PNG" alt="Card image">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
